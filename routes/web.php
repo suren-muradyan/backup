@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('backup')->group(function () {
+    Route::get('/', 'BackupController@index');
+    Route::get('/run', 'BackupController@run');
+});
